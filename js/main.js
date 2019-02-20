@@ -180,8 +180,9 @@ var CRUMINA = {};
 		$('.overlay_search-input').focus();
 	};
 	/* -----------------------------
-	 * Embedded Video in pop up
-	 * ---------------------------*/
+	 * Embedded Video in pop up old 
+	 -----------------------------
+	* ---------------------------*/
 	CRUMINA.mediaPopups = function () {
 		$('.js-popup-iframe').magnificPopup({
 			disableOn: 700,
@@ -190,8 +191,17 @@ var CRUMINA = {};
 			removalDelay: 160,
 			preloader: false,
 
-			fixedContentPos: false
+			fixedContentPos: false,
+
+			iframe: {
+			  patterns: {
+			    youtube: {
+			      src: 'https://www.youtube.com/embed/%id%?autoplay=1'
+			    },
+			  }
+			}
 		});
+
 		$('.js-zoom-image, .link-image').magnificPopup({
 			type: 'image',
 			removalDelay: 500, //delay removal by X to allow out-animation
